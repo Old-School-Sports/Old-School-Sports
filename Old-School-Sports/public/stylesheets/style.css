@@ -35,3 +35,8 @@ a {
 .next{
 	float: right;
 }
+#container-new{
+
+	width: 300px !important;
+	height: 300px;
+}
