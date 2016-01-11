@@ -1,4 +1,3 @@
-'use strict';
 var bcrypt = require("bcrypt");
 var salt = bcrypt.genSaltSync(10);
 
@@ -46,7 +45,7 @@ module.exports = function (sequelize, DataTypes){
           where: {
             email: email
           }
-        })
+        }) 
         .then(function(user){
           if (user === null){
             throw new Error("Username does not exist");
