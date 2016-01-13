@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var session = require("express-session");
 var app = express();
 var db = require("../models"); 
 

@@ -32,7 +32,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/login', users);
 
-
+app.delete('/logout', function(req,res){
+  req.logout();
+  res.redirect('/');
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -65,8 +68,12 @@ app.use(function(err, req, res, next) {
   });
 });
 
-app.listen(3000); 
+app.listen(3000, function(){
 
-console.log("Now running on 3000"); 
+  console.log("Now running on 3000"); 
+
+}); 
+
+
 
 module.exports = app;
