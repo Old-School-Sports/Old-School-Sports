@@ -48,7 +48,7 @@ router.put('/', function(req, res, next){
     		data.a1 = req.body.a1 	
     	}
     	if(req.body.t2){
-    		data.t2 = req.body.a2	
+    		data.t2 = req.body.t2	
     	}
     	if(req.body.a2){
     		data.a2 = req.body.a2	

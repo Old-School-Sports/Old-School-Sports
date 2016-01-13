@@ -44,6 +44,42 @@ module.exports = {
       a6: {
         type: Sequelize.TEXT
       },
+      t7: {
+        type: Sequelize.TEXT
+      },
+      a7: {
+        type: Sequelize.TEXT
+      },
+      t8: {
+        type: Sequelize.TEXT
+      },
+      a8: {
+        type: Sequelize.TEXT
+      },
+      t9: {
+        type: Sequelize.TEXT
+      },
+      a9: {
+        type: Sequelize.TEXT
+      },
+      t10: {
+        type: Sequelize.TEXT
+      },
+      a10: {
+        type: Sequelize.TEXT
+      },
+      t11: {
+        type: Sequelize.TEXT
+      },
+      a11: {
+        type: Sequelize.TEXT
+      },
+      t12: {
+        type: Sequelize.TEXT
+      },
+      a12: {
+        type: Sequelize.TEXT
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

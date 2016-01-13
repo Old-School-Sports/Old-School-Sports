@@ -41,7 +41,7 @@
           <ul class="nav nav-pills pull-right">
             <li role="presentation" class="active" style="visibility:<%=s%>"><a href="/login">Login</a></li> 
             <li role="presentation" class="active">
-              <form method = 'POST' action = '/logout?_method=DELETE'>
+              <form <%= s === true ? hidden : '' %>  method = 'POST' action = '/logout?_method=DELETE'>
                 <button> Log Out </button>
                 <br>
               </form>
