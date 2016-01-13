@@ -50,12 +50,20 @@ router.post('/', function(req,res) {
 
         db.Data.findById(1).then(function(article){
     
-          var t1 = article.dataValues.t1;
-          var a1 = article.dataValues.a1;
-          var t2 = article.dataValues.t2;
-          var a2 = article.dataValues.a2;
+        var t1 = article.dataValues.t1;
+        var a1 = article.dataValues.a1;
+        var t2 = article.dataValues.t2;
+        var a2 = article.dataValues.a2;
+        var t3 = article.dataValues.t3;
+        var a3 = article.dataValues.a3;
+        var t4 = article.dataValues.t4;
+        var a4 = article.dataValues.a4;
+        var t5 = article.dataValues.t5;
+        var a5 = article.dataValues.a5;
+        var t6 = article.dataValues.t6;
+        var a6 = article.dataValues.a6;
 
-          res.render('index', {s: false, t1: t1, a1:a1, t2: t2 });
+          res.render('index', {s: false, t1:t1, a1:a1, t2:t2, a2: a2, t3: t3, a3: a3, t4: t4, a4: a4, t5: t5, a5:a5, t6:t6, a6:a6 });
         });
 
       });
