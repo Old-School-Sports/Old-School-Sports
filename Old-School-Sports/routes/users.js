@@ -36,6 +36,7 @@ router.use("/", function (req, res, next) {
 
 router.post('/', function(req,res) {
   var user = req.body.user;
+  var session = req.session; 
   
   db.User
     .authenticate(user.email, user.password)
@@ -43,8 +44,22 @@ router.post('/', function(req,res) {
   
           req.login(user);
   
-          res.redirect("/"); // redirect to user profile
+          
+      }).then(function(){
+
+        db.Data.findById(1).then(function(article){
+    
+          var t1 = article.dataValues.t1;
+          var a1 = article.dataValues.a1;
+          var t2 = article.dataValues.t2;
+          var a2 = article.dataValues.a2;
+
+          res.render('index', {s: 'hidden', t1: t1, a1:a1, t2: t2 });
+        });
+
       });
+
+    
 });
 
 

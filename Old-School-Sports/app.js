@@ -9,6 +9,10 @@ var session = require("express-session");
 var db = require("./models"); 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var methodOverride = require('method-override')
+
+// override with POST having ?_method=PUT
+app.use(methodOverride('_method'))
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -17,6 +21,7 @@ app.set('view engine', 'ejs');
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -28,6 +33,33 @@ app.use(session({
 
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use("/", function (req, res, next) {
+
+  req.login = function (user) {
+    req.session.userId = user.id;
+  };
+
+  req.currentUser = function () {
+    return db.User.
+      find({
+        where: {
+          id: req.session.userId
+       }
+      }).
+      then(function (user) {
+        req.user = user;
+        return user;
+      })
+  };
+
+  req.logout = function () {
+    req.session.userId = null;
+    req.user = null;
+  }
+
+  next(); 
+});
 
 app.use('/', routes);
 app.use('/login', users);

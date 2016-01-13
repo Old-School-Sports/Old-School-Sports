@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -38,10 +39,16 @@
       <div class="header clearfix">
         <nav>
           <ul class="nav nav-pills pull-right">
-            <li role="presentation" class="active"><a href="/login">Login</a></li>
+            <li role="presentation" class="active" style="visibility:<%=s%>"><a href="/login">Login</a></li> 
             <li role="presentation" class="active">
               <form method = 'POST' action = '/logout?_method=DELETE'>
                 <button> Log Out </button>
+                <br>
+              </form>
+            </li>
+            <li> 
+              <form method = 'POST' action = '/?_method=PUT'>
+                <button type='submit'> Save Text </button>
                 <br>
               </form>
             </li>
@@ -60,9 +67,10 @@
       <div class="row">
 	    
 	        <div class="col-md-6">
-	          <h4 id = "t1"> <%=t1 %></h4>
-	          <p id = "a1"> <%= a1 %> </p>
-
+	          <h4 contenteditable="true"> <%=t1 %></h4>
+	          <input type="text" name="t1" placeholder="username">
+            <p name = "a1" contenteditable="true"> <%= a1 %> </p>
+            <textarea name = "a1"></textarea>
 	          <h4>Subheading</h4>
 	          <p>Ut egestas elit eget sapien porta viverra. Aenean imperdiet risus euismod tellus molestie congue. Fusce nulla dolor, rhoncus nec porttitor non, viverra non nisi. Proin aliquet libero non facilisis eleifend. Ut posuere fermentum purus, eget iaculis tellus efficitur fringilla. Donec gravida libero sed justo hendrerit, sed convallis arcu sollicitudin. Sed in ipsum tristique, accumsan metus at, euismod turpis. Vivamus fermentum aliquam libero, nec ultrices nisi malesuada quis. Donec ac semper massa. Quisque id hendrerit urna.</p>
 
