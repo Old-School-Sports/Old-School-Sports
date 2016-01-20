@@ -35,6 +35,30 @@
   <body class="green">
 
     <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active" style="visibility:<%=s%>"><a href="/login">Login</a></li> 
+            <li role="presentation" class="active">
+              <form <%= s === true ? hidden : '' %>  method = 'POST' action = '/logout?_method=DELETE'>
+                <button> Log Out </button>
+                <br>
+              </form>
+            </li>
+            <li> 
+              
+            </li>
+          </ul>
+        </nav>
+        <!-- <h3 class="text-muted">Project name</h3> -->
+      </div>
+      <div class="text-center title hx"> Old School Sports Page </div>
+      <br/><br/>
+      <div class="jumbotron hidden ">
+        <h1>Header Image or Header Text</h1>
+        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        
+      </div>
       
       <div class="row">
 	    
@@ -91,6 +115,7 @@
               <button type='submit'> Save Text </button>
             </form>
             <div class="cindi">
+              <h2> Cindi's Corner </h2><br/>
               <h4> <%=t11 %></h4>
               <form <%= s === true ? hidden : '' %>  method = 'POST' action = '/page2?_method=PUT'>
                   <input type="text" name="t11">  
@@ -124,7 +149,9 @@
 
       <footer class="footer">
         <p>© 2015 Company, Inc.</p>
-        <button class="next"> <a href='/'>Page 1</a> </button> 
+        <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active"><a href="/"> Back </a></li> 
+        </ul>
       </footer>
 
     </div> <!-- /container -->

@@ -63,7 +63,7 @@ router.post('/', function(req,res) {
         var t6 = article.dataValues.t6;
         var a6 = article.dataValues.a6;
 
-          res.render('index', {s: false, t1:t1, a1:a1, t2:t2, a2: a2, t3: t3, a3: a3, t4: t4, a4: a4, t5: t5, a5:a5, t6:t6, a6:a6});
+          res.render('index', {s: 'hidden', t1:t1, a1:a1, t2:t2, a2: a2, t3: t3, a3: a3, t4: t4, a4: a4, t5: t5, a5:a5, t6:t6, a6:a6});
         });
 
       });
