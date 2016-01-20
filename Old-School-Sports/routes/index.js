@@ -198,7 +198,7 @@ router.put('/page2', function(req, res, next){
 });
 
 router.get('/login', function(req, res, next) {
-  res.render('login');
+  res.render('login', {warning: ' '});
 });
 
 module.exports = router;

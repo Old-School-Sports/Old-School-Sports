@@ -41,14 +41,18 @@ module.exports = function (sequelize, DataTypes){
       },
       authenticate: function(email, password) {
         // find a user in the DB
+        console.log("???")
         return this.find({
           where: {
             email: email
           }
         }) 
         .then(function(user){
+        console.log("here ")
           if (user === null){
-            throw new Error("Username does not exist");
+            
+            console.log("herrere")
+            return null 
           }
           else if (user.checkPassword(password)){
             return user;

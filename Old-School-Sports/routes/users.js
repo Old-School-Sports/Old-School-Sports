@@ -42,6 +42,12 @@ router.post('/', function(req,res) {
   db.User
     .authenticate(user.email, user.password)
     .then(function (user) {
+             console.log("I'm here ", user)
+          if(user === null){
+            res.render('login', {warning: " username or password is incorrect"}); 
+          }
+          req.login(user);
+  
   
           req.login(user);
   
@@ -63,7 +69,7 @@ router.post('/', function(req,res) {
         var t6 = article.dataValues.t6;
         var a6 = article.dataValues.a6;
 
-          res.render('index', {s: 'hidden', t1:t1, a1:a1, t2:t2, a2: a2, t3: t3, a3: a3, t4: t4, a4: a4, t5: t5, a5:a5, t6:t6, a6:a6});
+          res.render('index', {warning: ' ', s: 'hidden', t1:t1, a1:a1, t2:t2, a2: a2, t3: t3, a3: a3, t4: t4, a4: a4, t5: t5, a5:a5, t6:t6, a6:a6});
         });
 
       });
@@ -79,6 +85,9 @@ router.post('/page2', function(req,res) {
     .authenticate(user.email, user.password)
     .then(function (user) {
   
+          if(user === null){
+            res.render('login'); 
+          }
           req.login(user);
   
           
@@ -99,7 +108,7 @@ router.post('/page2', function(req,res) {
         var t12 = article.dataValues.t12;
         var a12 = article.dataValues.a12;
 
-          res.render('page2', {s: false, t7:t7, a7:a7, t8:t8, a8: a8, t9: t9, a9: a9, t10: t10, a10: a10, t11: t11, a11:a11, t12:t12, a12:a12});
+          res.render('page2', {warning: ' ', s: false, t7:t7, a7:a7, t8:t8, a8: a8, t9: t9, a9: a9, t10: t10, a10: a10, t11: t11, a11:a11, t12:t12, a12:a12});
         });
 
       });
