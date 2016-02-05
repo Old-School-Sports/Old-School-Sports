@@ -13,8 +13,10 @@ sequelize model:create --name Data --attributes t1:data,a1:data,t2:data,a2:data,
 sequelize model:create --name Users --attributes email:string,passwordDigest:string
 
 sequelize db:migrate
-
- heroku pg:push Old-School-Sports HEROKU_POSTGRESQL_YELLOW_URL --app oldschoolsports
+	
+heroku addons:create heroku-postgresql:hobby-dev	
+heroku config to see which database to put in config production 
+heroku pg:push Old-School-Sports HEROKU_POSTGRESQL_YELLOW_URL --app oldschoolsports
 
 To start: 
 
