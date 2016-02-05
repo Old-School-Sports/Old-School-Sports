@@ -14,6 +14,8 @@ sequelize model:create --name Users --attributes email:string,passwordDigest:str
 
 sequelize db:migrate
 
+ heroku pg:push Old-School-Sports HEROKU_POSTGRESQL_YELLOW_URL --app oldschoolsports
+
 To start: 
 
 Run npm install 
