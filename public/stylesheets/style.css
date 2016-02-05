@@ -1,0 +1,44 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.twoColumns{
+    -webkit-column-gap: 20px;
+       -moz-column-gap: 20px;
+            column-gap: 20px;
+    -webkit-column-count: 2;
+       -moz-column-count: 2;
+            column-count: 2;
+}
+
+.cindi{
+
+	background-color: #FFB6C1;
+
+}
+
+.green{
+		background-color: #F0FFF0;
+}
+
+.title{
+
+		text-decoration: underline;
+
+}
+
+.next{
+	float: right;
+}
+#container-new{
+
+	width: 300px !important;
+	height: 300px;
+}
+
+.hx { font-size: 40px;}
