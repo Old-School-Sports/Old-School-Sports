@@ -13,6 +13,12 @@ sequelize model:create --name Data --attributes t1:data,a1:data,t2:data,a2:data,
 sequelize model:create --name Users --attributes email:string,passwordDigest:string
 
 sequelize db:migrate
+
+to add a User 
+
+1). Node 
+2). var db = require('./models'); 
+3). db.createSecure('username@username.com', 'password') --> Stores password in hashed form safely 
 	
 heroku addons:create heroku-postgresql:hobby-dev	
 heroku config to see which database to put in config production 
@@ -25,3 +31,6 @@ Run npm install
 type nodemon app.js in the terminal 
 
 go to localhost:3000
+
+* Must have an entry in the DB for both the intital articles for site to run 
+
